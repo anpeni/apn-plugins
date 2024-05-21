@@ -1,5 +1,5 @@
 {
-  "name": "@internal/plugin-mongodb",
+  "name": "@svsm/plugin-mongodb",
   "description": "A Backstage plugin that integrates towards mongodb",
   "version": "0.3.30",
   "main": "src/index.ts",
