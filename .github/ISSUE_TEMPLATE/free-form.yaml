@@ -1,0 +1,17 @@
+name: Formulario libre
+description: Archivo para crear un problema personalizado de formulario libre
+title: ':memo: []: '
+labels: ['formulario-libre']
+projects: ['DDC-NEORIS/19']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        :pencil: Proporcione un resumen general del problema en el título arriba.
+  - type: textarea
+    id: descripcion-del-problema
+    attributes:
+      label: Descripción del Problema
+      description: 'Describa su problema con tanto detalle como desee aquí. :memo:'
+    validations:
+      required: true

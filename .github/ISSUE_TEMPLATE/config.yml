@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: SVSM Support
+    url: https://github.com/DDC-NEORIS/incibe-r01-management/discussions
+    about: Please ask and answer questions here.
