@@ -1,6 +1,6 @@
 {
-  "name": "@internal/plugin-oracle",
-  "description": "A Backstage plugin that integrates towards Oracle",
+  "name": "@svsm/plugin-sql",
+  "description": "A Backstage plugin that integrates towards Sql",
   "version": "0.3.30",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -17,11 +17,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/backstage/backstage",
-    "directory": "plugins/oracle"
+    "directory": "plugins/circleci"
   },
   "keywords": [
     "backstage",
-    "oracle"
+    "circleci"
   ],
   "sideEffects": false,
   "scripts": {
@@ -41,6 +41,7 @@
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
     "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "circleci-api": "^4.0.0",
     "humanize-duration": "^3.27.0",
     "lodash": "^4.17.21",
     "luxon": "^3.0.0",
