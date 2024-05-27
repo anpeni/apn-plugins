@@ -1,9 +1,0 @@
-name: Hola Mundo Manual
-on: 
-  workflow_dispatch:
-jobs:
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Saluda
-        run: echo "Hola Mundo desde GitHub Actions!"
