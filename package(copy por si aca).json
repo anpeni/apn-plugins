@@ -1,20 +1,17 @@
 {
-  "name": "incibe-r01-svsm-plugins",
-  "version": "1.0.0",
-  "description": "Plugins propios de SVSM",
-  "main": "index.js",
+  "name": "@svsm/plugins",
+  "version": "0.0.1",
+  "description": "Paquete contenedor de aquellos creados por SVSM",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "svsm",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git"
   },
-  "files":[
-    "workspaces"
-  ],
+  "author": "SVSM",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins/issues"
   },
