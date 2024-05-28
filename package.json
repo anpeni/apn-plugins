@@ -21,5 +21,6 @@
   "homepage": "https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
