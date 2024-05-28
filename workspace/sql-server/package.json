@@ -16,8 +16,8 @@
   "homepage": "https://backstage.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/backstage/backstage",
-    "directory": "plugins/sql-server"
+    "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git",
+    "directory": "workspace/sql-server"
   },
   "configSchema": "config.d.ts",
   "scripts": {
