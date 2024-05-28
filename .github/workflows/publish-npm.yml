@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Publish to Github Packages
 
 on:
   push:
@@ -23,12 +23,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '18'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Autenticarse con el registro de Github Packages
+        run: |
+          echo "@svsm:registry=https://npm.pkg.github.com/"> ./.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" >> ./.npmrc
+          cat ./.npmrc
+          
+      - name: Ejecutar npm install
+        run: npm install
 
       - name: Install dependencies
         run: npm ci
 
       - name: Publish to NPM
         run: npm publish --access private
-        env:
-          NODE_AUTH_TOKEN: ${{ steps.generate-token.outputs.token }}
