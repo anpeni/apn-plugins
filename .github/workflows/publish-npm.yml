@@ -32,6 +32,9 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" >> ./.npmrc
           cat ./.npmrc
           
+      - name: Ejecutar yarn install
+        run: yarn install
+
       - name: Ejecutar npm install
         run: npm install
 
