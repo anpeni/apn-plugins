@@ -1,5 +1,5 @@
 {
-  "name": "@svsm/plugin-oracle",
+  "name": "@ddc-neoris/plugin-oracle",
   "description": "A Backstage plugin that integrates towards Oracle",
   "version": "0.3.30",
   "main": "src/index.ts",

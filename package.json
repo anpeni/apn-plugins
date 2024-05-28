@@ -1,5 +1,5 @@
 {
-  "name": "@svsm/plugins",
+  "name": "incibe-r01-svsm-plugins",
   "version": "1.0.0",
   "description": "Plugins propios de SVSM",
   "main": "index.js",
