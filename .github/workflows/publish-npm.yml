@@ -39,4 +39,5 @@ jobs:
         run: npm ci
 
       - name: Publish to NPM
-        run: npm publish --access restricted
+        run: |
+          yarn workspaces foreach -v npm publish --access restricted

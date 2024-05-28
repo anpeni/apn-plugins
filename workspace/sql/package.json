@@ -1,5 +1,5 @@
 {
-  "name": "@svsm/plugin-sql",
+  "name": "@ddc-neoris/plugin-sql",
   "description": "A Backstage plugin that integrates towards Sql",
   "version": "0.3.30",
   "main": "src/index.ts",
