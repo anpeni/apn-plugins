@@ -32,8 +32,13 @@ jobs:
 
       - name: Autenticarse con el registro de Github Packages
         run: |
-          echo "@ddc-neoris:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" > ~/.npmrc
+          echo 'npmRegistries:' >> ./.yarnrc.yml 
+          echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
+          echo '    githubAuthToken: "${{ steps.generate-token.outputs.token }}"' >> ./.yarnrc.yml 
+          echo 'npmScopes:' >> ./.yarnrc.yml 
+          echo '  ddc-neoris:' >> ./.yarnrc.yml 
+          echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
+          cat ./.yarnrc.yml
           
       - name: Ejecutar yarn install
         run: yarn install
