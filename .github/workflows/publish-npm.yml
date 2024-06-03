@@ -30,17 +30,15 @@ jobs:
         run: |
           yarn set version stable
 
-      # - name: Autenticarse con el registro de Github Packages
-      #   run: |
-      #     echo "@svsm:registry=https://npm.pkg.github.com/"> ./.npmrc
-      #     echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" >> ./.npmrc
-      #     cat ./.npmrc
+      - name: Autenticarse con el registro de Github Packages
+        run: |
+          echo "@svsm:registry=https://npm.pkg.github.com/"> ./.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" >> ./.npmrc
+          cat ./.npmrc
           
       - name: Ejecutar yarn install
         run: yarn install
 
       - name: Publish to NPM
         run: |
-          echo "@svsm:registry=https://npm.pkg.github.com/" > ./.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" >> ./.npmrc
-          yarn workspaces foreach --all -v npm publish --access restricted    
+          yarn workspaces foreach --all -v npm publish --access restricted
