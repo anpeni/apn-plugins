@@ -26,19 +26,14 @@ jobs:
           node-version: '18'
           registry-url: 'https://npm.pkg.github.com'
 
-      - name: Set up Yarn 3
+      - name: Set up Yarn 4
         run: |
           yarn set version stable
 
       - name: Autenticarse con el registro de Github Packages
         run: |
-          echo 'npmRegistries:' >> ./.yarnrc.yml 
-          echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
-          echo ' githubAuthToken: "${{ steps.generate-token.outputs.token }}"' >> ./.yarnrc.yml 
-          echo 'npmScopes:' >> ./.yarnrc.yml 
-          echo ' ddc-neoris:' >> ./.yarnrc.yml 
-          echo ' npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
-          cat ./.yarnrc.yml
+          echo "@ddc-neoris:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ steps.generate-token.outputs.token }}" > ~/.npmrc
           
       - name: Ejecutar yarn install
         run: yarn install
@@ -46,3 +41,5 @@ jobs:
       - name: Publish to NPM
         run: |
           yarn workspaces foreach --all -v npm publish --access restricted --tag latest
+        env: 
+          NODE_AUTH_TOKEN: ${{ steps.generate-token.outputs.token }}
