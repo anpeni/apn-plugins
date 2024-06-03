@@ -8,7 +8,6 @@
   },
   "author": "svsm",
   "license": "ISC",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git"
