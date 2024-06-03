@@ -26,6 +26,10 @@ jobs:
           node-version: '18'
           registry-url: 'https://npm.pkg.github.com'
 
+      - name: Set up Yarn 3
+        run: |
+          yarn set version latest
+
       - name: Autenticarse con el registro de Github Packages
         run: |
           echo "@svsm:registry=https://npm.pkg.github.com/"> ./.npmrc

@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git"
   },
-  "files": [
-    "workspaces"
+  "workspaces": [
+    "workspace/*"
   ],
   "bugs": {
     "url": "https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins/issues"
