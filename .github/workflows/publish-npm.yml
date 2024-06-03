@@ -28,7 +28,7 @@ jobs:
 
       - name: Set up Yarn 3
         run: |
-          yarn set version latest
+          yarn set version stable
 
       - name: Autenticarse con el registro de Github Packages
         run: |
