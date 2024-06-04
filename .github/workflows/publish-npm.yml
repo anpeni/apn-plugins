@@ -4,18 +4,9 @@ on:
   push:
     branches:
       - main
-
-permissions:
-  packages: write
-  id-token: write
-  contents: read
-
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
 
     steps:
       - name: Generate token
@@ -51,5 +42,5 @@ jobs:
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
           yarn workspaces foreach --all -v npm publish --access restricted --tag latest
-        env: 
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
