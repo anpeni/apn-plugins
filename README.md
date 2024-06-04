@@ -1,9 +1,22 @@
-# The Plugins Folder
+# Repositorio de Plugins Personalizados por Neoris🚀
 
-This is where your own plugins and their associated modules live, each in a
-separate folder of its own.
+Este repositorio contiene los paquetes en el directorio `/plugins` desarrollados a medida por Neoris.
 
-If you want to create a new plugin here, go to your project root directory, run
-the command `yarn backstage-cli create`, and follow the on-screen instructions.
+## Contenido del Repositorio
 
-You can also check out existing plugins on [the plugin marketplace](https://backstage.io/plugins)!
+### Paquetes
+
+- **Plugins personalizados**: Contiene plugins desarrollados por Neoris para Backstage.
+
+### Estructura de Directorios
+
+- **/plugins**: Contiene plugins desarrollados a medida por Neoris.
+
+### Prerrequisitos
+
+Hay que tener instalados:
+- Node.js (versión 18)
+- Yarn
+
+
+
