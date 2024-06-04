@@ -41,6 +41,6 @@ jobs:
           echo '  ddc-neoris:' >> ./.yarnrc.yml 
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
-          yarn workspaces foreach --all -v npm publish --access restricted --tag latest
+          yarn workspaces foreach --all -v npm publish --access restricted --tolerate-republish --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
