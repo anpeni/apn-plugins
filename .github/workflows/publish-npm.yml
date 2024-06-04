@@ -34,4 +34,4 @@ jobs:
           cat ./.yarnrc.yml
 
       - name: Publish to GitHub Packages
-        run: yarn workspaces foreach --no-private -v npm publish --access restricted --tolerate-republish --tag latest
+        run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
