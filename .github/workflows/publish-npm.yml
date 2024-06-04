@@ -45,11 +45,11 @@ jobs:
         run: |
           echo 'npmRegistries:' >> ./.yarnrc.yml 
           echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
-          echo '    npmAuthToken: "${{ steps.generate-token.outputs.token }}"' >> ./.yarnrc.yml 
+          echo '    npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"' >> ./.yarnrc.yml 
           echo 'npmScopes:' >> ./.yarnrc.yml 
           echo '  ddc-neoris:' >> ./.yarnrc.yml 
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
           yarn workspaces foreach --all -v npm publish --access restricted --tag latest
         env: 
-          NODE_AUTH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
