@@ -1,6 +1,7 @@
 {
   "name": "incibe-r01-svsm-plugins",
   "version": "1.0.0",
+  "private": true,
   "description": "Plugins propios de SVSM",
   "main": "index.js",
   "scripts": {
