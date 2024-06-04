@@ -16,16 +16,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          registry-url: 'https://npm.pkg.github.com'
 
       - name: Set up Yarn 4
-        run: |
-          yarn set version berry
+        run: yarn set version berry
 
       - name: Ejecutar yarn install
         run: yarn install
 
-      - name: Publish to NPM
+      - name: Create .yarnrc.yml
         run: |
           echo 'npmRegistries:' >> ./.yarnrc.yml 
           echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
@@ -34,6 +32,6 @@ jobs:
           echo '  ddc-neoris:' >> ./.yarnrc.yml 
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
-          yarn workspaces foreach --all -v npm publish --access restricted --tolerate-republish --tag latest
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Packages
+        run: yarn workspaces foreach --all -v npm publish --access restricted --tolerate-republish --tag latest
