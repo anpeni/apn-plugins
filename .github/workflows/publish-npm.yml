@@ -38,7 +38,7 @@ jobs:
           httpTimeout: 300000
           nodeLinker: node-modules
           npmRegistryServer: 'https://registry.npmjs.org/'
-          yarnPath: .yarn/releases/yarn-3.8.1.cjs
+          yarnPath: .yarn/releases/yarn-4.2.2.cjs
           npmRegistries:
             "https://npm.pkg.github.com":
               npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"
