@@ -1,10 +1,14 @@
 {
   "name": "@ddc-neoris/plugin-sql",
   "description": "A Backstage plugin that integrates towards Sql",
-  "version": "0.3.30",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
+  "customField": {
+    "description": "version",
+    "value": "0.3.30"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "main": "dist/index.esm.js",

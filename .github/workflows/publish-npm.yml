@@ -22,7 +22,13 @@ jobs:
 
       - name: Ejecutar yarn install
         run: yarn install
+        
+      - name: Generate TypeScript declaration files
+        run: yarn tsc
 
+      - name: build
+        run: yarn backstage-cli repo build --all
+      
       - name: Create .yarnrc.yml
         run: |
           echo 'npmRegistries:' >> ./.yarnrc.yml 
