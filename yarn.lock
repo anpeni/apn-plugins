@@ -3558,6 +3558,8 @@ __metadata:
     node-fetch: ^2.6.7
     winston: ^3.2.1
     yn: ^4.0.0
+  peerDependencies:
+    "@types/jest": "*"
   languageName: unknown
   linkType: soft
 
@@ -3587,6 +3589,8 @@ __metadata:
     node-fetch: ^2.6.7
     winston: ^3.2.1
     yn: ^4.0.0
+  peerDependencies:
+    "@types/jest": "*"
   languageName: unknown
   linkType: soft
 
@@ -3646,6 +3650,8 @@ __metadata:
     node-fetch: ^2.6.7
     winston: ^3.2.1
     yn: ^4.0.0
+  peerDependencies:
+    "@types/jest": "*"
   languageName: unknown
   linkType: soft
 
