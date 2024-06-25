@@ -49,7 +49,7 @@ jobs:
           cat .yarnrc.yml
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --mode=update-lockfile
 
       - name: Generate TypeScript declaration files
         run: yarn tsc
