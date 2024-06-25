@@ -4,52 +4,34 @@ on:
   push:
     branches:
       - main
-
 jobs:
   publish:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    env:
-      NODE_OPTIONS: ${{ matrix.node-version == '18.x' && '--max-old-space-size=8192 --no-node-snapshot' || '--max-old-space-size=8192' }}
-
     steps:
-      - uses: actions/checkout@v4.1.6
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4.0.2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org/
+          node-version: '18'
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: Set up Yarn 4
+        run: yarn set version berry
 
-      - name: Check Yarn version
-        run: yarn --version
+      - name: Ejecutar yarn install
+        run: yarn install
 
-      - name: Configure .yarnrc.yml
+      - name: Create .yarnrc.yml
         run: |
-          cat > .yarnrc.yml <<EOF
-          enableGlobalCache: true
-          httpTimeout: 300000
-          nodeLinker: node-modules
-          npmRegistryServer: 'https://registry.npmjs.org/'
-          yarnPath: .yarn/releases/yarn-4.2.2.cjs
-          npmRegistries:
-            "https://npm.pkg.github.com":
-              npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"
-          npmScopes:
-            ddc-neoris:
-              npmRegistryServer: "https://npm.pkg.github.com"
-          EOF
-          cat .yarnrc.yml
-
-      - name: Install dependencies
-        run: yarn install --mode=update-lockfile
+          echo 'npmRegistries:' >> ./.yarnrc.yml 
+          echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
+          echo '    npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"' >> ./.yarnrc.yml 
+          echo 'npmScopes:' >> ./.yarnrc.yml 
+          echo '  ddc-neoris:' >> ./.yarnrc.yml 
+          echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
+          cat ./.yarnrc.yml
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
