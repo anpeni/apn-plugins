@@ -48,10 +48,8 @@ jobs:
           EOF
           cat .yarnrc.yml
 
-      - name: Install yarn
-        uses: backstage/actions/yarn-install@v0.6.4
-        with:
-          cache-prefix: ${{ runner.os }}-v${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn install --mode=update-lockfile
 
       - name: Generate TypeScript declaration files
         run: yarn tsc
