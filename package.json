@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antonio-perezn_neoris/apn-plugins.git"
+    "url": "git+https://github.com/anpeni/apn-plugins.git"
   },
   "workspaces": {
     "packages": [
@@ -19,9 +19,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/antonio-perezn_neoris/apn-plugins/issues"
+    "url": "https://github.com/anpeni/apn-plugins/issues"
   },
-  "homepage": "https://github.com/antonio-perezn_neoris/apn-plugins#readme",
+  "homepage": "https://github.com/anpeni/apn-plugins#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
