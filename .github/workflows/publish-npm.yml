@@ -51,11 +51,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --mode=update-lockfile
 
-      - name: Generate TypeScript declaration files
-        run: yarn tsc
-
-      - name: build
-        run: yarn backstage-cli repo build --all
-
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
