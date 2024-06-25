@@ -1,5 +1,5 @@
 {
-  "name": "@antonio-perezn_neoris/plugin-mongodb",
+  "name": "@anpeni/plugin-mongodb",
   "description": "A Backstage plugin that integrates towards mongodb",
   "version": "1.0.0",
   "main": "src/index.ts",
@@ -19,7 +19,7 @@
     "type": "git",
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/antonio-perezn_neoris/apn-plugins.git"
+      "url": "git+https://github.com/anpeni/apn-plugins.git"
     },
     "directory": "workspace/mongodb"
   },

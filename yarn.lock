@@ -15,9 +15,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antonio-perezn_neoris/plugin-mongodb@workspace:workspace/mongodb":
+"@anpeni/plugin-mongodb@workspace:workspace/mongodb":
   version: 0.0.0-use.local
-  resolution: "@antonio-perezn_neoris/plugin-mongodb@workspace:workspace/mongodb"
+  resolution: "@anpeni/plugin-mongodb@workspace:workspace/mongodb"
   dependencies:
     "@backstage/catalog-model": ^1.4.5
     "@backstage/cli": ^0.26.2
