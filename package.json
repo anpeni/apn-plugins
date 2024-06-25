@@ -1,5 +1,5 @@
 {
-  "name": "incibe-r01-svsm-plugins",
+  "name": "apn-plugins",
   "version": "1.0.0",
   "private": true,
   "description": "Plugins propios de SVSM",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git"
+    "url": "git+https://github.com/antonio-perezn_neoris/apn-plugins.git"
   },
   "workspaces": {
     "packages": [
@@ -19,9 +19,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins/issues"
+    "url": "https://github.com/antonio-perezn_neoris/apn-plugins/issues"
   },
-  "homepage": "https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins#readme",
+  "homepage": "https://github.com/antonio-perezn_neoris/apn-plugins#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
