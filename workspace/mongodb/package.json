@@ -1,14 +1,10 @@
 {
-  "name": "@svsm-plugins/plugin-mongodb",
+  "name": "@ddc-neoris/plugin-mongodb",
   "description": "A Backstage plugin that integrates towards mongodb",
-  "version": "0.3.32",
+  "version": "0.3.29",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
-  "customField": {
-    "description": "version",
-    "value": "0.3.27"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "main": "dist/index.esm.js",

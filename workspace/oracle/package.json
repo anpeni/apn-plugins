@@ -1,67 +1,61 @@
 {
-  "name": "@ddc-neoris/plugin-oracle",
-  "description": "A Backstage plugin that integrates towards Oracle",
-  "version": "1.0.0",
+  "name": "@ddc-neoris/plugin-oracle-backend",
+  "description": "A Backstage backend plugin that integrates Oracle",
+  "version": "0.4.0-next.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
-  "customField": {
-    "description": "version",
-    "value": "0.3.30"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "main": "dist/index.esm.js",
+    "main": "dist/index.cjs.js",
     "types": "dist/index.d.ts",
     "access": "restricted"
   },
   "backstage": {
-    "role": "frontend-plugin"
+    "role": "backend-plugin"
   },
   "homepage": "https://backstage.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DDC-NEORIS/incibe-r01-svsm-plugins.git",
-    "directory": "workspace/oracle"
+    "directory": "workspace/oracle-backend"
   },
-  "keywords": [
-    "backstage",
-    "oracle"
-  ],
-  "sideEffects": false,
+  "configSchema": "config.d.ts",
   "scripts": {
+    "start": "backstage-cli package start",
     "build": "backstage-cli package build",
     "lint": "backstage-cli package lint",
     "test": "backstage-cli package test",
-    "clean": "backstage-cli package clean",
-    "start": "backstage-cli package start",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "clean": "backstage-cli package clean"
   },
   "dependencies": {
+    "@backstage/backend-common": "^0.21.6",
+    "@backstage/backend-plugin-api": "^0.6.16",
+    "@backstage/backend-test-utils": "^0.3.6",
+    "@backstage/catalog-client": "^1.6.3",
     "@backstage/catalog-model": "^1.4.5",
-    "@backstage/core-components": "^0.14.3",
-    "@backstage/core-plugin-api": "^1.9.1",
-    "@backstage/plugin-catalog-react": "^1.11.2",
-    "@material-ui/core": "^4.12.2",
-    "@material-ui/icons": "^4.9.1",
-    "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
-    "humanize-duration": "^3.27.0",
-    "lodash": "^4.17.21",
-    "luxon": "^3.0.0",
-    "react-use": "^17.2.4"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
-    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
-  },
-  "devDependencies": {
     "@backstage/cli": "^0.26.2",
-    "@backstage/dev-utils": "^1.0.30",
-    "@types/humanize-duration": "^3.25.1"
+    "@backstage/config": "^1.2.0",
+    "@backstage/errors": "^1.2.4",
+    "@backstage/plugin-auth-node": "^0.4.11",
+    "@backstage/plugin-catalog-node": "^1.11.0",
+    "@backstage/plugin-permission-common": "^0.7.13",
+    "@backstage/plugin-permission-node": "^0.7.27",
+    "@types/express": "^4.17.6",
+    "@types/supertest": "^2.0.8",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "mongoose": "^8.2.0",
+    "mssql": "^10.0.2",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.7",
+    "winston": "^3.2.1",
+    "yn": "^4.0.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "config.d.ts"
   ]
 }

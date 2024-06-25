@@ -1,7 +1,7 @@
 {
   "name": "@ddc-neoris/plugin-mongodb-server",
   "description": "A Backstage backend plugin that integrates mongodb-server",
-  "version": "1.0.0",
+  "version": "0.4.0-next.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
@@ -10,10 +10,6 @@
     "main": "dist/index.cjs.js",
     "types": "dist/index.d.ts",
     "access": "restricted"
-  },
-  "customField": {
-    "description": "version",
-    "value": "0.4.0-next.0"
   },
   "backstage": {
     "role": "backend-plugin"
@@ -27,7 +23,6 @@
   "configSchema": "config.d.ts",
   "scripts": {
     "start": "backstage-cli package start",
-    "tsc": "tsc",
     "build": "backstage-cli package build",
     "lint": "backstage-cli package lint",
     "test": "backstage-cli package test",

@@ -21,7 +21,7 @@ jobs:
         run: yarn set version berry
 
       - name: Ejecutar yarn install
-        run: yarn install --mode=update-lockfile
+        run: yarn install
 
       - name: Create .yarnrc.yml
         run: |
