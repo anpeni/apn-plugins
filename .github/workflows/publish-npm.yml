@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Set up Yarn 4
-        run: yarn set version berry
+      - name: Install Yarn
+        run: npm install -g yarn
 
-      - name: Ejecutar yarn install
-        run: yarn install --mode=update-lockfile
+      - name: Check Yarn version
+        run: yarn --version
 
       - name: Create .yarnrc.yml
         run: |
