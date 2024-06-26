@@ -23,6 +23,9 @@ jobs:
       - name: Ejecutar yarn install
         run: yarn install
 
+      - name: Install TypeScript
+        run: yarn add typescript --dev
+
       - name: Create .yarnrc.yml
         run: |
           echo 'npmRegistries:' >> ./.yarnrc.yml 
