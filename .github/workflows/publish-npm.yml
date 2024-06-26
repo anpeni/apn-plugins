@@ -20,12 +20,6 @@ jobs:
       - name: Set up Yarn 4
         run: yarn set version 4.2.2
 
-      - name: Ejecutar yarn install
-        run: yarn install
-
-      - name: Install TypeScript
-        run: yarn add typescript --dev
-
       - name: Create .yarnrc.yml
         run: |
           echo 'npmRegistries:' >> ./.yarnrc.yml 
@@ -36,8 +30,12 @@ jobs:
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
 
-      - name: Print .yarnrc.yml
-        run: cat ./.yarnrc.yml
+      - name: Install dependencies in workspace/mongodb
+        run: yarn install
+        working-directory: ./workspace/mongodb
+
+      - name: Return to the root directory
+        run: cd ..
         
       - name: Install yarn
         uses: backstage/actions/yarn-install@v0.6.4
