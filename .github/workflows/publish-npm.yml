@@ -33,5 +33,9 @@ jobs:
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
 
+      - name: Print .yarnrc.yml
+        run: cat ./.yarnrc.yml
+
+
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
