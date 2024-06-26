@@ -8,8 +8,7 @@
   
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "main": "dist/index.esm.js",
-    "types": "dist/index.d.ts",
+    "main": "src/index.ts",
     "access": "restricted"
   },
   "backstage": {
