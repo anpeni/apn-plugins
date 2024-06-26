@@ -39,17 +39,18 @@ jobs:
       - name: Print .yarnrc.yml
         run: cat ./.yarnrc.yml
         
-      - name: yarn install
-        run: yarn install --immutable
-
-      - name: Install TypeScript
-        run: yarn add typescript --dev
+      - name: Install yarn
+        uses: backstage/actions/yarn-install@v0.6.4
+        with:
+          cache-prefix: ${{ runner.os }}-v${{ matrix.node-version }}
 
       - name: Compile TypeScript
         run: yarn tsc
 
-      - name: Build all packages
-        run: yarn build:all
+      - name: Build backend
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+        run: yarn build:backend --config ../../app-config.yaml
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
