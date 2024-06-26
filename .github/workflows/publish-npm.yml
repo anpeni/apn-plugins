@@ -34,7 +34,7 @@ jobs:
           cat ./.yarnrc.yml
           
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --mode=update-lockfile
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
