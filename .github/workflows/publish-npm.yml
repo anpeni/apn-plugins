@@ -32,6 +32,9 @@ jobs:
           echo '  anpeni:' >> ./.yarnrc.yml 
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
+          
+      - name: Install dependencies
+        run: yarn install
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
