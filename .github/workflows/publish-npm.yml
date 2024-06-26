@@ -46,7 +46,7 @@ jobs:
         run: yarn add typescript --dev
 
       - name: Compile TypeScript
-        run: yarn tsc:full
+        run: yarn tsc
 
       - name: Build all packages
         run: yarn build:all
