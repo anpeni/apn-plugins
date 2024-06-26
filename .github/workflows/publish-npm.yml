@@ -35,7 +35,7 @@ jobs:
         working-directory: ./workspace/mongodb
 
       - name: Return to the root directory
-        run: cd ..
+        run: cd ../..
         
       - name: Install yarn
         uses: backstage/actions/yarn-install@v0.6.4
