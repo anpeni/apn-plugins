@@ -42,13 +42,11 @@ jobs:
         with:
           cache-prefix: ${{ runner.os }}-v${{ matrix.node-version }}
 
-      - name: Compile TypeScript
-        run: yarn tsc
+      # - name: Compile TypeScript
+      #   run: yarn tsc
 
-      - name: Build backend
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
-        run: yarn build:backend --config ../../app-config.yaml
+      - name: Build all workspaces
+        run: yarn workspaces foreach --all --no-private run build
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
