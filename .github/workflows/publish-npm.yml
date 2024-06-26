@@ -1,29 +1,46 @@
 name: Publish to Github Packages
-
+ 
 on:
   push:
     branches:
       - main
+ 
 jobs:
   publish:
     runs-on: ubuntu-latest
-
+ 
+    strategy:
+      matrix:
+        node-version: ['18.18.2']
+ 
+    env:
+      NODE_OPTIONS: ${{ matrix.node-version == '18.18.2' && '--max-old-space-size=8192 --no-node-snapshot' || '--max-old-space-size=8192' }}
+ 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.1.6
+ 
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4.0.2
         with:
-          node-version: '18'
-
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
+ 
       - name: Install Yarn
         run: npm install -g yarn
-
-      - name: Check Yarn version
-        run: yarn --version
-
-      - name: Create .yarnrc.yml
+ 
+      - name: Install TypeScript
+        run: npm install -g typescript@5.3.2
+ 
+      - name: Print Node.js, Yarn and TypeScript versions
+        run: |
+          echo "Node.js version:"
+          node --version
+          echo "Yarn version:"
+          yarn --version
+          echo "TypeScript version:"
+          tsc --version
+ 
+      - name: Configure .yarnrc.yml
         run: |
           echo "enableGlobalCache: true" > .yarnrc.yml
           echo "httpTimeout: 300000" >> .yarnrc.yml
@@ -40,9 +57,15 @@ jobs:
           echo "  anpeni:" >> .yarnrc.yml
           echo "    npmRegistryServer: \"https://npm.pkg.github.com\"" >> .yarnrc.yml
           cat .yarnrc.yml
-          
+ 
       - name: Install dependencies
-        run: yarn install --mode=update-lockfile
-
+        run: yarn install
+ 
+      - name: Generate TypeScript declaration files
+        run: yarn tsc
+ 
+      - name: build
+        run: yarn backstage-cli repo build --all
+ 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
