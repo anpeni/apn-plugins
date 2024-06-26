@@ -25,13 +25,21 @@ jobs:
 
       - name: Create .yarnrc.yml
         run: |
-          echo 'npmRegistries:' >> ./.yarnrc.yml 
-          echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
-          echo '    npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"' >> ./.yarnrc.yml 
-          echo 'npmScopes:' >> ./.yarnrc.yml 
-          echo '  anpeni:' >> ./.yarnrc.yml 
-          echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
-          cat ./.yarnrc.yml
+          echo "enableGlobalCache: true" > .yarnrc.yml
+          echo "httpTimeout: 300000" >> .yarnrc.yml
+          echo "nodeLinker: node-modules" >> .yarnrc.yml
+          echo "npmRegistryServer: 'https://registry.npmjs.org/'" >> .yarnrc.yml
+          echo "plugins:" >> .yarnrc.yml
+          echo "  - path: .yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs" >> .yarnrc.yml
+          echo "    spec: '@yarnpkg/plugin-workspace-tools'" >> .yarnrc.yml
+          echo "yarnPath: .yarn/releases/yarn-3.8.1.cjs" >> .yarnrc.yml
+          echo "npmRegistries:" >> .yarnrc.yml
+          echo "  \"https://npm.pkg.github.com\":" >> .yarnrc.yml
+          echo "    npmAuthToken: \"${{ secrets.GH_TOKEN }}\"" >> .yarnrc.yml
+          echo "npmScopes:" >> .yarnrc.yml
+          echo "  anpeni:" >> .yarnrc.yml
+          echo "    npmRegistryServer: \"https://npm.pkg.github.com\"" >> .yarnrc.yml
+          cat .yarnrc.yml
           
       - name: Install dependencies
         run: yarn install --mode=update-lockfile
