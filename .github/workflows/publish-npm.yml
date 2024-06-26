@@ -32,7 +32,7 @@ jobs:
           echo "plugins:" >> .yarnrc.yml
           echo "  - path: .yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs" >> .yarnrc.yml
           echo "    spec: '@yarnpkg/plugin-workspace-tools'" >> .yarnrc.yml
-          echo "yarnPath: .yarn/releases/yarn-3.8.1.cjs" >> .yarnrc.yml
+          echo "yarnPath: .yarn/releases/yarn-4.2.2.cjs" >> .yarnrc.yml
           echo "npmRegistries:" >> .yarnrc.yml
           echo "  \"https://npm.pkg.github.com\":" >> .yarnrc.yml
           echo "    npmAuthToken: \"${{ secrets.GH_TOKEN }}\"" >> .yarnrc.yml
