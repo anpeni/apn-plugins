@@ -35,6 +35,15 @@ jobs:
 
       - name: Print .yarnrc.yml
         run: cat ./.yarnrc.yml
+        
+      - name: yarn install
+        run: yarn install --immutable
+
+      - name: Compile TypeScript
+        run: yarn tsc:full
+
+      - name: Build all packages
+        run: yarn build:all
 
 
       - name: Publish to GitHub Packages
