@@ -29,6 +29,78 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@anpeni/plugin-jenkins-backend@workspace:^, @anpeni/plugin-jenkins-backend@workspace:plugins/jenkins-backend":
+  version: 0.0.0-use.local
+  resolution: "@anpeni/plugin-jenkins-backend@workspace:plugins/jenkins-backend"
+  dependencies:
+    "@anpeni/plugin-jenkins-common": "workspace:^"
+    "@backstage/backend-common": "npm:^0.21.7"
+    "@backstage/backend-plugin-api": "npm:^0.6.17"
+    "@backstage/backend-test-utils": "npm:^0.3.7"
+    "@backstage/catalog-client": "npm:^1.6.4"
+    "@backstage/catalog-model": "npm:^1.4.5"
+    "@backstage/cli": "npm:^0.26.3"
+    "@backstage/config": "npm:^1.2.0"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/plugin-catalog-node": "npm:^1.11.1"
+    "@backstage/plugin-permission-common": "npm:^0.7.13"
+    "@backstage/plugin-permission-node": "npm:^0.7.28"
+    "@types/express": "npm:^4.17.6"
+    "@types/jenkins": "npm:^1.0.0"
+    "@types/node-fetch": "npm:^2.5.12"
+    "@types/supertest": "npm:^2.0.8"
+    express: "npm:^4.17.1"
+    express-promise-router: "npm:^4.1.0"
+    jenkins: "npm:^1.0.0"
+    node-fetch: "npm:^2.6.7"
+    yn: "npm:^4.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@anpeni/plugin-jenkins-common@workspace:^, @anpeni/plugin-jenkins-common@workspace:plugins/jenkins-common":
+  version: 0.0.0-use.local
+  resolution: "@anpeni/plugin-jenkins-common@workspace:plugins/jenkins-common"
+  dependencies:
+    "@backstage/cli": "npm:^0.26.3"
+    "@backstage/plugin-catalog-common": "npm:^1.0.22"
+    "@backstage/plugin-permission-common": "npm:^0.7.13"
+  languageName: unknown
+  linkType: soft
+
+"@anpeni/plugin-jenkins@workspace:^, @anpeni/plugin-jenkins@workspace:plugins/jenkins":
+  version: 0.0.0-use.local
+  resolution: "@anpeni/plugin-jenkins@workspace:plugins/jenkins"
+  dependencies:
+    "@anpeni/plugin-jenkins-common": "workspace:^"
+    "@backstage/catalog-model": "npm:^1.4.5"
+    "@backstage/cli": "npm:^0.26.3"
+    "@backstage/core-components": "npm:^0.14.4"
+    "@backstage/core-plugin-api": "npm:^1.9.2"
+    "@backstage/dev-utils": "npm:^1.0.31"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/plugin-catalog-react": "npm:^1.11.3"
+    "@backstage/test-utils": "npm:^1.5.4"
+    "@material-ui/core": "npm:^4.12.2"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@testing-library/dom": "npm:^10.0.0"
+    "@testing-library/jest-dom": "npm:^6.0.0"
+    "@testing-library/react": "npm:^15.0.0"
+    "@types/react": "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
+    "@types/react-dom": "npm:^18.2.19"
+    "@types/testing-library__jest-dom": "npm:^6.0.0"
+    canvas: "npm:^2.11.2"
+    luxon: "npm:^3.0.0"
+    react: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
+    react-dom: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
+    react-router-dom: "npm:6.0.0-beta.0 || ^6.3.0"
+    react-use: "npm:^17.2.4"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-router-dom: 6.0.0-beta.0 || ^6.3.0
+  languageName: unknown
+  linkType: soft
+
 "@apidevtools/json-schema-ref-parser@npm:9.0.6":
   version: 9.0.6
   resolution: "@apidevtools/json-schema-ref-parser@npm:9.0.6"
@@ -92,78 +164,6 @@ __metadata:
   checksum: 10/cabc978a4f44a54cf76d4a38186c714e89d1ca0cba3814ff2cfed3f0752ef46ebef35df16f45add25235c103f5d7d4b1f9e79ecec0e3596a912e5401b6d3df20
   languageName: node
   linkType: hard
-
-"@apn-plugins/plugin-jenkins-backend@workspace:^, @apn-plugins/plugin-jenkins-backend@workspace:plugins/jenkins-backend":
-  version: 0.0.0-use.local
-  resolution: "@apn-plugins/plugin-jenkins-backend@workspace:plugins/jenkins-backend"
-  dependencies:
-    "@apn-plugins/plugin-jenkins-common": "workspace:^"
-    "@backstage/backend-common": "npm:^0.21.7"
-    "@backstage/backend-plugin-api": "npm:^0.6.17"
-    "@backstage/backend-test-utils": "npm:^0.3.7"
-    "@backstage/catalog-client": "npm:^1.6.4"
-    "@backstage/catalog-model": "npm:^1.4.5"
-    "@backstage/cli": "npm:^0.26.3"
-    "@backstage/config": "npm:^1.2.0"
-    "@backstage/errors": "npm:^1.2.4"
-    "@backstage/plugin-catalog-node": "npm:^1.11.1"
-    "@backstage/plugin-permission-common": "npm:^0.7.13"
-    "@backstage/plugin-permission-node": "npm:^0.7.28"
-    "@types/express": "npm:^4.17.6"
-    "@types/jenkins": "npm:^1.0.0"
-    "@types/node-fetch": "npm:^2.5.12"
-    "@types/supertest": "npm:^2.0.8"
-    express: "npm:^4.17.1"
-    express-promise-router: "npm:^4.1.0"
-    jenkins: "npm:^1.0.0"
-    node-fetch: "npm:^2.6.7"
-    yn: "npm:^4.0.0"
-  languageName: unknown
-  linkType: soft
-
-"@apn-plugins/plugin-jenkins-common@workspace:^, @apn-plugins/plugin-jenkins-common@workspace:plugins/jenkins-common":
-  version: 0.0.0-use.local
-  resolution: "@apn-plugins/plugin-jenkins-common@workspace:plugins/jenkins-common"
-  dependencies:
-    "@backstage/cli": "npm:^0.26.3"
-    "@backstage/plugin-catalog-common": "npm:^1.0.22"
-    "@backstage/plugin-permission-common": "npm:^0.7.13"
-  languageName: unknown
-  linkType: soft
-
-"@apn-plugins/plugin-jenkins@workspace:^, @apn-plugins/plugin-jenkins@workspace:plugins/jenkins":
-  version: 0.0.0-use.local
-  resolution: "@apn-plugins/plugin-jenkins@workspace:plugins/jenkins"
-  dependencies:
-    "@apn-plugins/plugin-jenkins-common": "workspace:^"
-    "@backstage/catalog-model": "npm:^1.4.5"
-    "@backstage/cli": "npm:^0.26.3"
-    "@backstage/core-components": "npm:^0.14.4"
-    "@backstage/core-plugin-api": "npm:^1.9.2"
-    "@backstage/dev-utils": "npm:^1.0.31"
-    "@backstage/errors": "npm:^1.2.4"
-    "@backstage/plugin-catalog-react": "npm:^1.11.3"
-    "@backstage/test-utils": "npm:^1.5.4"
-    "@material-ui/core": "npm:^4.12.2"
-    "@material-ui/icons": "npm:^4.9.1"
-    "@testing-library/dom": "npm:^10.0.0"
-    "@testing-library/jest-dom": "npm:^6.0.0"
-    "@testing-library/react": "npm:^15.0.0"
-    "@types/react": "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
-    "@types/react-dom": "npm:^18.2.19"
-    "@types/testing-library__jest-dom": "npm:^6.0.0"
-    canvas: "npm:^2.11.2"
-    luxon: "npm:^3.0.0"
-    react: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
-    react-dom: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
-    react-router-dom: "npm:6.0.0-beta.0 || ^6.3.0"
-    react-use: "npm:^17.2.4"
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  languageName: unknown
-  linkType: soft
 
 "@ardatan/sync-fetch@npm:^0.0.1":
   version: 0.0.1
@@ -6627,8 +6627,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@internal-apn/jenkins@workspace:."
   dependencies:
-    "@apn-plugins/plugin-jenkins": "workspace:^"
-    "@apn-plugins/plugin-jenkins-backend": "workspace:^"
+    "@anpeni/plugin-jenkins": "workspace:^"
+    "@anpeni/plugin-jenkins-backend": "workspace:^"
     "@backstage/cli": "npm:^0.26.9"
     "@backstage/e2e-test-utils": "npm:^0.1.1"
     "@backstage/repo-tools": "npm:^0.9.2"
@@ -13708,7 +13708,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:packages/app"
   dependencies:
-    "@apn-plugins/plugin-jenkins": "workspace:^"
+    "@anpeni/plugin-jenkins": "workspace:^"
     "@backstage-community/plugin-github-actions": "npm:^0.6.16"
     "@backstage-community/plugin-tech-radar": "npm:^0.7.4"
     "@backstage/app-defaults": "npm:^1.5.6"
@@ -14440,7 +14440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "backend@workspace:packages/backend"
   dependencies:
-    "@apn-plugins/plugin-jenkins-backend": "workspace:^"
+    "@anpeni/plugin-jenkins-backend": "workspace:^"
     "@backstage/backend-common": "npm:^0.23.1"
     "@backstage/backend-defaults": "npm:^0.3.2"
     "@backstage/backend-tasks": "npm:^0.5.25"

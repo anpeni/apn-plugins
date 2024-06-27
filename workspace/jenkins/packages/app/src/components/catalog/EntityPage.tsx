@@ -61,7 +61,7 @@ import {
   EntityJenkinsContent,
   EntityLatestJenkinsRunCard,
   isJenkinsAvailable,
-} from '@apn-plugins/plugin-jenkins';
+} from '@anpeni/plugin-jenkins';
 
 const techdocsContent = (
   <EntityTechdocsContent>
