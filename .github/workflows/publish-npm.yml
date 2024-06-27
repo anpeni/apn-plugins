@@ -7,6 +7,12 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./workspaces/jenkins
+    env:
+      CI: true
+      NODE_OPTIONS: --max-old-space-size=4096
 
     steps:
       - name: Checkout code
@@ -30,23 +36,15 @@ jobs:
           echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
           cat ./.yarnrc.yml
 
-      - name: Install dependencies in workspace/mongodb
-        run: yarn install
-        working-directory: ./workspace/mongodb
+      - name: yarn install
+        run: yarn install --immutable
 
-      - name: Return to the root directory
-        run: cd ../..
-        
-      - name: Install yarn
-        uses: backstage/actions/yarn-install@v0.6.4
-        with:
-          cache-prefix: ${{ runner.os }}-v${{ matrix.node-version }}
+      - name: Compile TypeScript
+        run: yarn tsc:full
 
-      # - name: Compile TypeScript
-      #   run: yarn tsc
+      - name: Build all packages
+        run: yarn build:all
 
-      - name: Build all workspaces
-        run: yarn workspaces foreach --all --no-private run build
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
