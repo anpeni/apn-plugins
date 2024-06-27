@@ -30,7 +30,7 @@ import {
 import { stringifyEntityRef } from '@backstage/catalog-model';
 import { stringifyError } from '@backstage/errors';
 import { createPermissionIntegrationRouter } from '@backstage/plugin-permission-node';
-import { jenkinsPermissions } from '@apn-plugins/plugin-jenkins-common';
+import { jenkinsPermissions } from '@anpeni/plugin-jenkins-common';
 import {
   AuthService,
   DiscoveryService,

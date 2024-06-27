@@ -39,6 +39,6 @@ backend.add(import('@backstage/plugin-search-backend-module-catalog/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
 // Jenkins
-backend.add(import('@apn-plugins/plugin-jenkins-backend'));
+backend.add(import('@anpeni/plugin-jenkins-backend'));
 
 backend.start();

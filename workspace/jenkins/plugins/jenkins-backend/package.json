@@ -39,7 +39,7 @@
     "test": "backstage-cli package test"
   },
   "dependencies": {
-    "@apn-plugins/plugin-jenkins-common": "workspace:^",
+    "@anpeni/plugin-jenkins-common": "workspace:^",
     "@backstage/backend-common": "^0.21.7",
     "@backstage/backend-plugin-api": "^0.6.17",
     "@backstage/catalog-client": "^1.6.4",

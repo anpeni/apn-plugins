@@ -24,7 +24,7 @@ import type {
   ScmDetails,
 } from '../types';
 import { AuthorizeResult } from '@backstage/plugin-permission-common';
-import { jenkinsExecutePermission } from '@apn-plugins/plugin-jenkins-common';
+import { jenkinsExecutePermission } from '@anpeni/plugin-jenkins-common';
 import fetch, { HeaderInit } from 'node-fetch';
 import {
   BackstageCredentials,
