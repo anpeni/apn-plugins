@@ -61,7 +61,7 @@ import {
   EntityJenkinsContent,
   EntityLatestJenkinsRunCard,
   isJenkinsAvailable,
-} from '@backstage-community/plugin-jenkins';
+} from '@apn-plugins/plugin-jenkins';
 
 const techdocsContent = (
   <EntityTechdocsContent>
