@@ -1,14 +1,14 @@
 {
-  "name": "@apn-plugins/plugin-jenkins",
+  "name": "@anpeni/plugin-jenkins",
   "version": "0.10.0",
   "description": "A Backstage plugin that integrates towards Jenkins",
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "jenkins",
     "pluginPackages": [
-      "@apn-plugins/plugin-jenkins",
-      "@apn-plugins/plugin-jenkins-backend",
-      "@apn-plugins/plugin-jenkins-common"
+      "@anpeni/plugin-jenkins",
+      "@anpeni/plugin-jenkins-backend",
+      "@anpeni/plugin-jenkins-common"
     ]
   },
   "publishConfig": {
