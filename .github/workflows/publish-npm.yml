@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./workspaces/jenkins
+        working-directory: ./workspace/jenkins
     env:
       CI: true
       NODE_OPTIONS: --max-old-space-size=4096
@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '18'
 
-      # - name: Set up Yarn 4
-      #   run: yarn set version 4.2.2
+      - name: Set up Yarn 4
+        run: yarn set version 4.2.2
 
       - name: Create .yarnrc.yml
         run: |
