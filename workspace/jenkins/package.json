@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@apn-plugins/plugin-jenkins": "workspace:^",
-    "@apn-plugins/plugin-jenkins-backend": "workspace:^"
+    "@anpeni/plugin-jenkins": "workspace:^",
+    "@anpeni/plugin-jenkins-backend": "workspace:^"
   }
 }
