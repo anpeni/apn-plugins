@@ -1,13 +1,13 @@
 {
-  "name": "@apn-plugins/plugin-jenkins-common",
+  "name": "@anpeni/plugin-jenkins-common",
   "version": "0.1.26",
   "backstage": {
     "role": "common-library",
     "pluginId": "jenkins",
     "pluginPackages": [
-      "@apn-plugins/plugin-jenkins",
-      "@apn-plugins/plugin-jenkins-backend",
-      "@apn-plugins/plugin-jenkins-common"
+      "@anpeni/plugin-jenkins",
+      "@anpeni/plugin-jenkins-backend",
+      "@anpeni/plugin-jenkins-common"
     ]
   },
   "publishConfig": {
