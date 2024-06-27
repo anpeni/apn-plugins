@@ -26,6 +26,12 @@ jobs:
       - name: Iterate over directories and execute commands
         run: |
           for dir in ./workspace/*; do
+            # Skip the repo-tools directory
+            if [[ "$(basename $dir)" == "repo-tools" ]]; then
+              echo "Skipping $dir"
+              continue
+            fi
+
             if [ -d "$dir" ]; then
               echo "Working in $dir"
               cd $dir
