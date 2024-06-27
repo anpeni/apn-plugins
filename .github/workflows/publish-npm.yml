@@ -48,7 +48,9 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: |
-          yarn config set -H 'npmAuthToken' "${{secrets.GITHUB_TOKEN}}"
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+          yarn config set npmRegistryServer "https://npm.pkg.github.com"
           yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
