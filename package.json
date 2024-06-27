@@ -2,7 +2,7 @@
   "name": "@anpeni-plugins/plugins",
   "private": true,
   "version": "0.0.0",
-  "repository": "git@github.com:anpeni/anpeni-plugins.git",
+  "repository": "git@github.com:anpeni/apn-plugins.git",
   "engines": {
     "node": "18 || 20"
   },
