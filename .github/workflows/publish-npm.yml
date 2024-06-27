@@ -7,12 +7,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./workspace/jenkins
-    # env:
-    #   CI: true
-    #   NODE_OPTIONS: --max-old-space-size=4096
+    env:
+      CI: true
+      NODE_OPTIONS: --max-old-space-size=4096
 
     steps:
       - name: Checkout code
@@ -26,31 +23,39 @@ jobs:
       - name: Set up Yarn 4
         run: yarn set version 4.2.2
 
-      - name: Create .yarnrc.yml
+      - name: Iterate over directories and execute commands
         run: |
-          echo 'npmRegistries:' >> ./.yarnrc.yml 
-          echo ' "https://npm.pkg.github.com":' >> ./.yarnrc.yml 
-          echo '    npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"' >> ./.yarnrc.yml 
-          echo 'npmScopes:' >> ./.yarnrc.yml 
-          echo '  anpeni:' >> ./.yarnrc.yml 
-          echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> ./.yarnrc.yml
-          cat ./.yarnrc.yml
+          for dir in ./workspace/*; do
+            if [ -d "$dir" ]; then
+              echo "Working in $dir"
+              cd $dir
+              
+              # Create .yarnrc.yml
+              echo 'npmRegistries:' > .yarnrc.yml 
+              echo ' "https://npm.pkg.github.com":' >> .yarnrc.yml 
+              echo '    npmAuthToken: "${{ secrets.GITHUB_TOKEN }}"' >> .yarnrc.yml 
+              echo 'npmScopes:' >> .yarnrc.yml 
+              echo '  anpeni:' >> .yarnrc.yml 
+              echo '    npmRegistryServer: "https://npm.pkg.github.com"' >> .yarnrc.yml
+              cat .yarnrc.yml
 
-      - name: yarn install
-        run: yarn install 
+              # Install dependencies
+              yarn install 
 
-      - name: Compile TypeScript
-        run: yarn tsc:full
+              # Compile TypeScript
+              yarn tsc:full
 
-      - name: Build all packages
-        run: yarn build:all
+              # Build all packages
+              yarn build:all
 
+              # Publish to GitHub Packages
+              echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+              yarn config set npmRegistryServer "https://npm.pkg.github.com"
+              yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
 
-      - name: Publish to GitHub Packages
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
-          yarn config set npmRegistryServer "https://npm.pkg.github.com"
-          yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
+              cd -  # go back to the previous directory
+            fi
+          done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
