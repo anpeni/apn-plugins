@@ -48,3 +48,5 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: yarn workspaces foreach --all --no-private -v npm publish --access restricted --tolerate-republish --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
