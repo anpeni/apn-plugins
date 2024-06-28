@@ -61,7 +61,8 @@
   "devDependencies": {
     "@backstage/cli": "^0.26.6",
     "@backstage/dev-utils": "^1.0.32",
-    "@types/humanize-duration": "^3.25.1"
+    "@types/humanize-duration": "^3.25.1",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
   },
   "configSchema": "config.d.ts"
 }
