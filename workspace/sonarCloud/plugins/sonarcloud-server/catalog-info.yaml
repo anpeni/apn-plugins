@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-plugin-sonarcloud-server
+  title: '@backstage/plugin-sonarcloud-server'
+  description: A Backstage backend plugin that integrates towards sonarcloud server
+spec:
+  lifecycle: experimental
+  type: backstage-backend-plugin
+  owner: maintainers
