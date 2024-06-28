@@ -45,8 +45,8 @@ function GraficoRealTimeVulnerBar({ data }: GraficoHomeBarProps) {
 
   const axisLineColor =
     theme.palette.type === 'dark'
-      ? '#FFF'
-      : '#000';
+    ? "#FFF"
+    : "#000"
 
   const xAxisStyles = {
     dataKey: 'name',
@@ -60,7 +60,6 @@ function GraficoRealTimeVulnerBar({ data }: GraficoHomeBarProps) {
   const barChartStyles = {
     margin: { top: 0, right: 0, left: 0, bottom: 0 },
   };
-
 
 
   const containerStyles: CSSProperties = {

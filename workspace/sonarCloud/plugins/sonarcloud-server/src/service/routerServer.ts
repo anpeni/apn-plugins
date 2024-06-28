@@ -1,4 +1,4 @@
-import express, { Response } from 'express';
+import express, { Request, Response } from 'express';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
 import { errorHandler, loadBackendConfig } from '@backstage/backend-common';
@@ -120,8 +120,8 @@ export async function createRouter(
 
   await fetchAndStoreProjectData(client, logger);
   periodAnalysis(client, logger);
-
-  router.get('/projects', async (res: Response) => {
+// @ts-ignore
+  router.get('/projects', async (req: Request, res: Response) => {
     try {
       const projects = await fetchProjects(client, logger);
       res.json(projects.filter(result => result !== null));
@@ -130,8 +130,8 @@ export async function createRouter(
       res.status(500).send('Error obteniendo datos de SonarCloud');
     }
   });
-
-  router.get('/projectsdb', async (res: Response) => {
+// @ts-ignore
+  router.get('/projectsdb', async (req: Request, res: Response) => {
     try {
       const projects = await fetchAllProjects();
       res.json(projects);
@@ -140,8 +140,8 @@ export async function createRouter(
       res.status(500).send('Error al recuperar proyectos de la base de datos');
     }
   });
-
-  router.get('/vulnerability7', async (res: Response) => {
+// @ts-ignore
+  router.get('/vulnerability7', async (req: Request, res: Response) => {
     try {
       const vulnerabilities = await fetchLastSevenVulnerabilities();
       res.status(200).json({ message: 'Success', vulnerabilities });
@@ -157,8 +157,8 @@ export async function createRouter(
   });
 
   router.get('/events', eventFunction);
-
-  router.post('/sonar-webhook', async (res: Response) => {
+// @ts-ignore
+  router.post('/sonar-webhook', async (req: Request, res: Response) => {
     await fetchAndStoreProjectData(client, logger);
     broadcastEvent(
       JSON.stringify({ message: 'Nuevo webhook recibido desde SonarCloud' }),
