@@ -1,32 +1,31 @@
 {
-  "name": "@anpeni/plugin-sql",
+  "name": "@anpeni/plugin-oracle",
   "version": "1.0.0",
-  "description": "A Backstage plugin that integrates towards Sql",
+  "description": "A Backstage plugin that integrates towards Oracle",
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "sql-server",
+    "pluginId": "oracle",
     "pluginPackages": [
-      "@anpeni/plugin-sql",
-      "@anpeni/plugin-sql-server"
+      "@anpeni/plugin-oracle",
+      "@anpeni/plugin-oracle-backend"
     ]
   },
   "publishConfig": {
-    "access": "public",
+    "access": "restricted",
     "main": "dist/index.esm.js",
     "types": "dist/index.d.ts"
   },
   "keywords": [
     "backstage",
-    "sql"
+    "oracle"
   ],
   "homepage": "https://backstage.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/anpeni/apn-plugins",
-    "directory": "workspace/sql/plugins/sql"
+    "directory": "workspace/oracle/plugins/oracle"
   },
   "license": "Apache-2.0",
-  "sideEffects": false,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "files": [
@@ -49,7 +48,6 @@
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
     "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
-    "circleci-api": "^4.0.0",
     "humanize-duration": "^3.27.0",
     "lodash": "^4.17.21",
     "luxon": "^3.0.0",
@@ -63,7 +61,7 @@
   "devDependencies": {
     "@backstage/cli": "^0.26.6",
     "@backstage/dev-utils": "^1.0.32",
-    "@types/humanize-duration": "^3.25.1",
-    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
-  }
+    "@types/humanize-duration": "^3.25.1"
+  },
+  "configSchema": "config.d.ts"
 }
