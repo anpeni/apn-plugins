@@ -4966,6 +4966,8 @@ __metadata:
     "@backstage/repo-tools": "npm:^0.8.0"
     "@changesets/cli": "npm:^2.27.1"
     "@spotify/prettier-config": "npm:^15.0.0"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
     node-gyp: "npm:^10.0.0"
     prettier: "npm:^2.3.2"
     typescript: "npm:~5.3.0"
@@ -8573,6 +8575,15 @@ __metadata:
   version: 1.2.3
   resolution: "@types/range-parser@npm:1.2.3"
   checksum: 10/f1cef586e01e511c47870e9773f12f2192bde33dad276031026d633dbace976fe150a245077dd54710d2867fbb83ba95fe2d94ef9739f2705690e2c5fe878634
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^18":
+  version: 18.3.0
+  resolution: "@types/react-dom@npm:18.3.0"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10/6ff53f5a7b7fba952a68e114d3b542ebdc1e87a794234785ebab0bcd9bde7fb4885f21ebaf93d26dc0a1b5b93287f42cad68b78ae04dddf6b20da7aceff0beaf
   languageName: node
   linkType: hard
 
