@@ -18,7 +18,7 @@
   "homepage": "https://backstage.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anpeni/community-plugins",
+    "url": "https://github.com/anpeni/apn-plugins",
     "directory": "workspace/sql/plugins/sql-server"
   },
   "license": "Apache-2.0",
