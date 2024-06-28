@@ -1,5 +1,5 @@
 {
-  "name": "@internal/plugin-oracle-backend",
+  "name": "@anpeni/plugin-oracle-backend",
   "version": "1.0.0",
   "description": "A Backstage backend plugin that integrates Oracle",
   "backstage": {
