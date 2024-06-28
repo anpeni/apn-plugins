@@ -56,11 +56,10 @@ export const RealTimeVulnerabilities: React.FC<UptimeCardProps> = ({
 }) => {
 
   const classes = useStyles();
-
-
   const { data, fetchVulnerabilities } = userSonarDataAnalysis();
+    // @ts-ignore
+  const handleSseMessage = (message: any) => {
 
-  const handleSseMessage = () => {
     fetchVulnerabilities();
   };
 

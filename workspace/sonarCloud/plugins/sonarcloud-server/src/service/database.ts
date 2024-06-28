@@ -36,10 +36,12 @@ export async function setupDatabase() {
 
   try {
     // Crear la tabla de proyectos
-    await pool.query(createProjectsTableQuery);
+    // @ts-ignore
+    const res1 = await pool.query(createProjectsTableQuery);
 
     // Crear la tabla de análisis de proyectos
-    await pool.query(createAnalysisRecordsTableQuery);
+    // @ts-ignore
+    const res2 = await pool.query(createAnalysisRecordsTableQuery);
   } catch (error) {
     console.error('Error al crear las tablas en la base de datos', error);
     throw error;
