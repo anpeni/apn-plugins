@@ -48,9 +48,6 @@ jobs:
               # Install dependencies
               yarn install 
 
-              # Fix common repository issues
-              yarn backstage-cli repo fix --publish
-
               # Compile TypeScript
               yarn tsc:full
 
