@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "A Backstage backend plugin that integrates Sql-server",
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "sql-server",
+    "pluginPackages": [
+      "@anpeni/plugin-sql",
+      "@anpeni/plugin-sql-server"
+    ]
   },
   "publishConfig": {
     "access": "restricted",
