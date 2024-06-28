@@ -1,6 +1,6 @@
 {
   "name": "@anpeni/plugin-sonarcloud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Backstage plugin that integrates towards sonarcloud",
   "backstage": {
     "role": "frontend-plugin",
