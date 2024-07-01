@@ -6,8 +6,8 @@
     "role": "frontend-plugin",
     "pluginId": "sonarcloud",
     "pluginPackages": [
-      "@anpeni/plugin-sonarcloud",
-      "@anpeni/plugin-sonarcloud-server"
+      "@anpeni/plugin-drupal",
+      "@anpeni/plugin-drupal-backend"
     ]
   },
   "publishConfig": {
