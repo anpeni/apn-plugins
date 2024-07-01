@@ -28,6 +28,7 @@ __metadata:
   dependencies:
     "@backstage/backend-common": "npm:^0.22.0"
     "@backstage/backend-plugin-api": "npm:^0.6.18"
+    "@backstage/cli": "npm:^0.26.6"
     "@backstage/config": "npm:^1.2.0"
     "@backstage/errors": "npm:^1.2.4"
     "@types/express": "npm:^4.17.6"
