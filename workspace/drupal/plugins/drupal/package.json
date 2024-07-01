@@ -1,0 +1,65 @@
+{
+  "name": "@anpeni/plugin-drupal",
+  "version": "1.0.0",
+  "description": "A Backstage plugin that integrates towards Drupal",
+  "backstage": {
+    "role": "frontend-plugin",
+    "pluginId": "sonarcloud",
+    "pluginPackages": [
+      "@anpeni/plugin-sonarcloud",
+      "@anpeni/plugin-sonarcloud-server"
+    ]
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "keywords": [
+    "backstage",
+    "drupal"
+  ],
+  "homepage": "https://backstage.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anpeni/apn-plugins",
+    "directory": "workspace/drupal/plugins/drupal"
+  },
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "start": "backstage-cli package start",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.5.0",
+    "@backstage/core-components": "^0.14.7",
+    "@backstage/core-plugin-api": "^1.9.2",
+    "@backstage/plugin-catalog-react": "^1.12.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.9.1",
+    "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-use": "^17.2.4"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.26.6",
+    "@backstage/dev-utils": "^1.0.32",
+    "@types/humanize-duration": "^3.25.1",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  }
+}
