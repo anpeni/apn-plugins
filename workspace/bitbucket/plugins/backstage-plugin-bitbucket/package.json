@@ -4,7 +4,7 @@
   "description": "A Backstage plugin that integrates towards bitbucket",
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "bitbucket",
+    "pluginId": "backstage-plugin-bitbucket",
     "pluginPackages": [
       "@anpeni/backstage-plugin-bitbucket"
     ]
@@ -30,7 +30,6 @@
   "files": [
     "dist"
   ],
-  "private": true,
   "sideEffects": false,
   "scripts": {
     "start": "backstage-cli package start",
