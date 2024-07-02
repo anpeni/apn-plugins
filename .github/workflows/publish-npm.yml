@@ -49,7 +49,7 @@ jobs:
               yarn install 
 
               # Compile TypeScript
-              yarn tsc:full
+              yarn tsc
 
               # Build all packages
               yarn build:all
