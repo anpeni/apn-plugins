@@ -40,5 +40,4 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
 // Jenkins
 backend.add(import('@anpeni/plugin-jenkins-backend'));
-backend.add(import('@anpeni/plugin-mongodb-server'));
 backend.start();
