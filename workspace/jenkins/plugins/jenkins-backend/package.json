@@ -43,7 +43,7 @@
     "@backstage/plugin-catalog-node": "^1.11.1",
     "@backstage/plugin-permission-common": "^0.7.13",
     "@backstage/plugin-permission-node": "^0.7.28",
-    "@ddc-neoris/plugin-jenkins-common-a": "workspace:^",
+    "@jenkins/plugin-jenkins-common-a": "workspace:^",
     "@types/express": "^4.17.6",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",

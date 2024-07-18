@@ -1,5 +1,5 @@
 {
-  "name": "@ddc-neoris/plugin-jenkins-common-a",
+  "name": "@anpeni/plugin-jenkins-common-a",
   "version": "1.0.0",
   "backstage": {
     "role": "common-library"
