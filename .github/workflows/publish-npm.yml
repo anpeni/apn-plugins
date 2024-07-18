@@ -27,7 +27,7 @@ jobs:
         run: |
           for dir in ./workspace/*; do
             # Skip the repo-tools directory
-            if [[ "$(basename $dir)" == "repo-tools" ]]; then
+            if [[ "$(basename $dir)" != "jenkins" ]]; then
               echo "Skipping $dir"
               continue
             fi
