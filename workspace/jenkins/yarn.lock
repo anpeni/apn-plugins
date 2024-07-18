@@ -33,6 +33,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@anpeni/plugin-jenkins-a@workspace:plugins/jenkins"
   dependencies:
+    "@anpeni/plugin-jenkins-common-a": "workspace:^"
     "@backstage/catalog-model": "npm:^1.4.5"
     "@backstage/cli": "npm:^0.26.3"
     "@backstage/core-components": "npm:^0.14.4"
@@ -41,7 +42,6 @@ __metadata:
     "@backstage/errors": "npm:^1.2.4"
     "@backstage/plugin-catalog-react": "npm:^1.11.3"
     "@backstage/test-utils": "npm:^1.5.4"
-    "@ddc-neoris/plugin-jenkins-common-a": "workspace:^"
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@testing-library/dom": "npm:^10.0.0"
@@ -67,6 +67,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@anpeni/plugin-jenkins-backend-a@workspace:plugins/jenkins-backend"
   dependencies:
+    "@anpeni/plugin-jenkins-common-a": "workspace:^"
     "@backstage/backend-common": "npm:^0.21.7"
     "@backstage/backend-plugin-api": "npm:^0.6.17"
     "@backstage/backend-test-utils": "npm:^0.3.7"
@@ -78,7 +79,6 @@ __metadata:
     "@backstage/plugin-catalog-node": "npm:^1.11.1"
     "@backstage/plugin-permission-common": "npm:^0.7.13"
     "@backstage/plugin-permission-node": "npm:^0.7.28"
-    "@ddc-neoris/plugin-jenkins-common-a": "workspace:^"
     "@types/express": "npm:^4.17.6"
     "@types/jenkins": "npm:^1.0.0"
     "@types/node-fetch": "npm:^2.5.12"
@@ -88,6 +88,16 @@ __metadata:
     jenkins: "npm:^1.0.0"
     node-fetch: "npm:^2.6.7"
     yn: "npm:^4.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@anpeni/plugin-jenkins-common-a@workspace:^, @anpeni/plugin-jenkins-common-a@workspace:plugins/jenkins-common":
+  version: 0.0.0-use.local
+  resolution: "@anpeni/plugin-jenkins-common-a@workspace:plugins/jenkins-common"
+  dependencies:
+    "@backstage/cli": "npm:^0.26.3"
+    "@backstage/plugin-catalog-common": "npm:^1.0.22"
+    "@backstage/plugin-permission-common": "npm:^0.7.13"
   languageName: unknown
   linkType: soft
 
@@ -3781,16 +3791,6 @@ __metadata:
   checksum: 10/0b7ce35b2fcc5502b06671a037c1ca9ba8ede4a0f3d9d46cc58acc687484b40fe753a85ed30252c872fa5de75d23b3337ad6f5fe8f09ad0f8d342a5583446642
   languageName: node
   linkType: hard
-
-"@ddc-neoris/plugin-jenkins-common-a@workspace:^, @ddc-neoris/plugin-jenkins-common-a@workspace:plugins/jenkins-common":
-  version: 0.0.0-use.local
-  resolution: "@ddc-neoris/plugin-jenkins-common-a@workspace:plugins/jenkins-common"
-  dependencies:
-    "@backstage/cli": "npm:^0.26.3"
-    "@backstage/plugin-catalog-common": "npm:^1.0.22"
-    "@backstage/plugin-permission-common": "npm:^0.7.13"
-  languageName: unknown
-  linkType: soft
 
 "@emotion/babel-plugin@npm:^11.11.0":
   version: 11.11.0

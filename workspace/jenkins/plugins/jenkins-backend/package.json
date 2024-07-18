@@ -34,6 +34,7 @@
     "test": "backstage-cli package test"
   },
   "dependencies": {
+    "@anpeni/plugin-jenkins-common-a": "workspace:^",
     "@backstage/backend-common": "^0.21.7",
     "@backstage/backend-plugin-api": "^0.6.17",
     "@backstage/catalog-client": "^1.6.4",
@@ -43,7 +44,6 @@
     "@backstage/plugin-catalog-node": "^1.11.1",
     "@backstage/plugin-permission-common": "^0.7.13",
     "@backstage/plugin-permission-node": "^0.7.28",
-    "@jenkins/plugin-jenkins-common-a": "workspace:^",
     "@types/express": "^4.17.6",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
