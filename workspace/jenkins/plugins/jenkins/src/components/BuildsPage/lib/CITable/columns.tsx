@@ -27,7 +27,7 @@ import { default as React, useState } from 'react';
 import { Project } from '../../../../api/JenkinsApi';
 import { buildRouteRef, jobRunsRouteRef } from '../../../../plugin';
 import { JenkinsRunStatus } from '../Status';
-import { jenkinsExecutePermission } from '@ddc-neoris/plugin-jenkins-common-a';
+import { jenkinsExecutePermission } from '@anpeni/plugin-jenkins-common-a';
 
 const FailCount = ({ count }: { count: number }): JSX.Element | null => {
   if (count !== 0) {
