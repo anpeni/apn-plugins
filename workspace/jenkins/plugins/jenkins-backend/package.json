@@ -1,10 +1,11 @@
 {
   "name": "@anpeni/plugin-jenkins-backend-a",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Backstage backend plugin that integrates towards Jenkins",
   "backstage": {
     "role": "backend-plugin"
   },
+  
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com",
