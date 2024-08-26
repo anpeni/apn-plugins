@@ -5,7 +5,7 @@ import {
   discoveryApiRef,
 } from '@backstage/core-plugin-api';
 
-export const drupalPlugin = createPlugin({
+export const commonPlugin = createPlugin({
   id: 'common',
   apis: [
     createApiFactory({
