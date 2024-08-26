@@ -22,3 +22,4 @@
 
 export { assetsPlugin, assetsPlugin as plugin } from './plugin';
 export * from './components';
+export * from './api';
