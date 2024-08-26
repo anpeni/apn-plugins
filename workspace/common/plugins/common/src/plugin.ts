@@ -1,19 +1,13 @@
-import { commonApiRef, CommonApi } from './api';
-import {
-  createPlugin,
-  createApiFactory,
-  discoveryApiRef,
-} from '@backstage/core-plugin-api';
+import { createPlugin, createRouteRef } from '@backstage/core-plugin-api';
 
-export const commonPlugin = createPlugin({
+export const commonRouteRef = createRouteRef({
   id: 'common',
-  apis: [
-    createApiFactory({
-      api: commonApiRef,
-      deps: { discoveryApi: discoveryApiRef },
-      factory: ({ discoveryApi }) => new CommonApi({ discoveryApi }),
-    }),
-  ],
 });
 
-
+/** @public */
+export const commonPlugin = createPlugin({
+  id: 'common',
+  routes: {
+    common: commonRouteRef,
+  },
+});

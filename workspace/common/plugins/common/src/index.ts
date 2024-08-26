@@ -1,7 +1,9 @@
-export * from '../src/api';
-export * from '../src/cache/index';
-// export * from '../src/database/index';
-export * from '../src/events/index';
-export * from '../src/server/index';
-export * from '../src/types/index';
-export * from '../src/update/index';
+export * from './api';
+export * from './cache';
+export * from './events';
+export * from './server';
+export * from './types';
+export * from './update';
+
+export { commonPlugin, commonPlugin as plugin } from './plugin';
+
