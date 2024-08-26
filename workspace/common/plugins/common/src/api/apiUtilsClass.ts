@@ -2,7 +2,7 @@ import { createApiRef, DiscoveryApi } from '@backstage/core-plugin-api';
 
 /** @public */
 export const commonApiRef = createApiRef<CommonApi>({
-  id: 'plugin.drupal.service',
+  id: 'plugin.common.service',
 });
 
 /** @public */
