@@ -1,4 +1,4 @@
-export * from '../src/api/apiUtils';
+export * from '../src/api';
 export * from '../src/cache/index';
 // export * from '../src/database/index';
 export * from '../src/events/index';
